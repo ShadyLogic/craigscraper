@@ -2,9 +2,9 @@ require 'nokogiri'
 require 'open-uri'
 require 'httparty'
 
-class Scraper
+module Scraper
 
-	attr_accessor :address, :doc, :links
+	extend ActiveSupport::Concern
 
 	def initialize(address)
 		@address = address

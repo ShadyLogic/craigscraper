@@ -1,0 +1,859 @@
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-24 02:04:39 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (8.8ms)
+Completed 200 OK in 118ms (Views: 82.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (120.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (97.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateLists (20150924091026)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150924091026"]]
+  [1m[35m (112.7ms)[0m  commit transaction
+Migrating to CreatePages (20150924091625)
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150924091625"]]
+  [1m[35m (111.8ms)[0m  commit transaction
+Migrating to CreateImages (20150924091846)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateImages (20150924091846)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (102.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (108.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.8ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateLists (20150924091026)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150924091026"]]
+  [1m[35m (136.7ms)[0m  commit transaction
+Migrating to CreatePages (20150924091625)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150924091625"]]
+  [1m[35m (113.4ms)[0m  commit transaction
+Migrating to CreateImages (20150924093040)
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "page_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150924093040"]]
+  [1m[35m (112.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mList Load (5.4ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  [1m[36mList Load (5.7ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  [1m[35mList Load (0.7ms)[0m  SELECT  "lists".* FROM "lists"  ORDER BY "lists"."id" ASC LIMIT 1
+  [1m[36mList Load (0.7ms)[0m  [1mSELECT  "lists".* FROM "lists"  ORDER BY "lists"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "lists" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-09-24 09:37:46.938611"], ["updated_at", "2015-09-24 09:37:46.938611"]]
+  [1m[35m (123.4ms)[0m  commit transaction
+  [1m[36mList Load (0.7ms)[0m  [1mSELECT  "lists".* FROM "lists"  ORDER BY "lists"."id" ASC LIMIT 1[0m
+  [1m[35mList Load (0.7ms)[0m  SELECT  "lists".* FROM "lists"  ORDER BY "lists"."id" ASC LIMIT 1
+  [1m[36m (94.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (119.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateLists (20150924091026)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150924091026"]]
+  [1m[35m (137.4ms)[0m  commit transaction
+Migrating to CreatePages (20150924091625)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.3ms)[0m  CREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "title" varchar, "body" text, "page_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150924091625"]]
+  [1m[35m (132.5ms)[0m  commit transaction
+Migrating to CreateImages (20150924091846)
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "page_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150924091846"]]
+  [1m[35m (135.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "lists" ("title", "created_at", "updated_at") VALUES (?, ?, ?)  [["title", "Test List"], ["created_at", "2015-09-24 09:46:41.872845"], ["updated_at", "2015-09-24 09:46:41.872845"]]
+  [1m[36m (106.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mList Load (0.8ms)[0m  SELECT  "lists".* FROM "lists"  ORDER BY "lists"."id" ASC LIMIT 1
+  [1m[36mList Load (1.3ms)[0m  [1mSELECT  "lists".* FROM "lists"  ORDER BY "lists"."id" ASC LIMIT 1[0m
+  [1m[35mPage Load (1.8ms)[0m  SELECT "pages".* FROM "pages" WHERE "pages"."list_id" = ?  [[nil, 1]]
+SQLite3::SQLException: no such column: pages.list_id: SELECT "pages".* FROM "pages" WHERE "pages"."list_id" = ?
+  [1m[36m (110.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (118.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateLists (20150924091026)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150924091026"]]
+  [1m[35m (123.2ms)[0m  commit transaction
+Migrating to CreatePages (20150924091625)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "title" varchar, "body" text, "list_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150924091625"]]
+  [1m[35m (112.3ms)[0m  commit transaction
+Migrating to CreateImages (20150924091846)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "page_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150924091846"]]
+  [1m[35m (112.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "lists" ("title", "created_at", "updated_at") VALUES (?, ?, ?)  [["title", "Test List"], ["created_at", "2015-09-24 09:48:37.758766"], ["updated_at", "2015-09-24 09:48:37.758766"]]
+  [1m[36m (113.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mList Load (0.7ms)[0m  SELECT  "lists".* FROM "lists"  ORDER BY "lists"."id" ASC LIMIT 1
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE "pages"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "pages" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Test Page"], ["created_at", "2015-09-24 09:49:23.776191"], ["updated_at", "2015-09-24 09:49:23.776191"]]
+  [1m[35m (110.2ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  UPDATE "pages" SET "list_id" = ?, "updated_at" = ? WHERE "pages"."id" = ?  [["list_id", 1], ["updated_at", "2015-09-24 09:49:23.925268"], ["id", 1]]
+  [1m[36m (107.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mUPDATE "pages" SET "url" = ?, "body" = ?, "updated_at" = ? WHERE "pages"."id" = ?[0m  [["url", "http://www.google.com"], ["body", "This is a test page"], ["updated_at", "2015-09-24 09:50:13.878278"], ["id", 1]]
+  [1m[35m (113.8ms)[0m  commit transaction
+  [1m[36mPage Load (0.8ms)[0m  [1mSELECT  "pages".* FROM "pages"  ORDER BY "pages"."id" ASC LIMIT 1[0m
+  [1m[36mList Load (0.6ms)[0m  [1mSELECT  "lists".* FROM "lists"  ORDER BY "lists"."id" ASC LIMIT 1[0m
+  [1m[35mPage Load (1.6ms)[0m  SELECT "pages".* FROM "pages" WHERE "pages"."list_id" = ?  [["list_id", 1]]
+  [1m[36mImage Load (0.8ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."page_id" = ?[0m  [["page_id", 1]]
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "images" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-09-24 09:54:13.501926"], ["updated_at", "2015-09-24 09:54:13.501926"]]
+  [1m[35m (134.7ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  UPDATE "images" SET "page_id" = ?, "updated_at" = ? WHERE "images"."id" = ?  [["page_id", 1], ["updated_at", "2015-09-24 09:54:13.654058"], ["id", 1]]
+  [1m[36m (109.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "images" SET "url" = ?, "updated_at" = ? WHERE "images"."id" = ?[0m  [["url", "http://www.google.com"], ["updated_at", "2015-09-24 09:54:39.675008"], ["id", 1]]
+  [1m[35m (114.7ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-24 02:55:13 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (5.5ms)
+Completed 200 OK in 60ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lists" for 127.0.0.1 at 2015-09-24 02:55:17 -0700
+Processing by ListsController#index as HTML
+  [1m[35mList Load (0.7ms)[0m  SELECT "lists".* FROM "lists"
+  Rendered lists/index.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 4836ms (Views: 4791.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-24 02:55:22 -0700
+
+
+Started GET "/assets/scaffolds.self-6e5bda86a7581ca970be9f9d9156b751c5806ac12e7f053ced9f2fcefad87586.css?body=1" for 127.0.0.1 at 2015-09-24 02:55:22 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-24 02:55:22 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-09-24 02:55:22 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-24 02:55:22 -0700
+
+
+Started GET "/assets/lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-24 02:55:22 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-24 02:55:22 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-24 02:55:22 -0700
+
+
+Started GET "/lists/1" for 127.0.0.1 at 2015-09-24 02:55:27 -0700
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mList Load (0.7ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered lists/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 205ms (Views: 164.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/lists" for 127.0.0.1 at 2015-09-24 02:55:32 -0700
+Processing by ListsController#index as HTML
+  [1m[35mList Load (0.6ms)[0m  SELECT "lists".* FROM "lists"
+  Rendered lists/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 215ms (Views: 211.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/lists/1/edit" for 127.0.0.1 at 2015-09-24 02:55:41 -0700
+Processing by ListsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mList Load (0.4ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered lists/_form.html.erb (31.0ms)
+  Rendered lists/edit.html.erb within layouts/application (60.2ms)
+Completed 200 OK in 215ms (Views: 210.6ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/lists/1" for 127.0.0.1 at 2015-09-24 02:55:44 -0700
+Processing by ListsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iCRc7cSVirCnXS+UNYoU2Tqli4FRYloNwS6p9zxCw/NM2RRL8nVF+LUL7m1xt6HBz9Ar6XygYLVoBXdnDYALvw==", "commit"=>"Update List", "id"=>"1"}
+  [1m[35mList Load (0.5ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.6ms)
+
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  app/controllers/lists_controller.rb:44:in `block in update'
+  app/controllers/lists_controller.rb:43:in `update'
+
+
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (36.4ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (14.8ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.3ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (169.5ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.8ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.4ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (96.5ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.6ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.9ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (189.5ms)
+
+
+Started GET "/lists" for 127.0.0.1 at 2015-09-24 02:55:58 -0700
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.8ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  Rendered lists/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 154ms (Views: 151.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/lists/new" for 127.0.0.1 at 2015-09-24 02:55:59 -0700
+Processing by ListsController#new as HTML
+  Rendered lists/_form.html.erb (6.6ms)
+  Rendered lists/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 192ms (Views: 190.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/lists" for 127.0.0.1 at 2015-09-24 02:56:00 -0700
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7EIe4Y7gethPRBh2bgGYZjFnH4b0z2AesCX8tlTaBCIov1ZHuAC1kF0S2Y8qPC1+xBK/7tkNWqYZDiImZRjMbg==", "commit"=>"Create List"}
+  [1m[35m (2.9ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "lists" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-09-24 09:56:00.887189"], ["updated_at", "2015-09-24 09:56:00.887189"]]
+  [1m[35m (164.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/lists/2
+Completed 302 Found in 206ms (ActiveRecord: 168.4ms)
+
+
+Started GET "/lists/2" for 127.0.0.1 at 2015-09-24 02:56:01 -0700
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.6ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered lists/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 230ms (Views: 223.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/lists" for 127.0.0.1 at 2015-09-24 02:56:13 -0700
+Processing by ListsController#index as HTML
+  [1m[35mList Load (0.5ms)[0m  SELECT "lists".* FROM "lists"
+  Rendered lists/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 158ms (Views: 155.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/lists/2" for 127.0.0.1 at 2015-09-24 02:56:16 -0700
+Processing by ListsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"M69dZjqt++Xno5EKzkJmIpUT87JpatA3wHGJibF/3P33UhXADE00rfX1UPOKf9M6YGZT2kSo6o9pWlcZgL0UsQ==", "id"=>"2"}
+  [1m[36mList Load (0.5ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (2.7ms)[0m  [1mDELETE FROM "lists" WHERE "lists"."id" = ?[0m  [["id", 2]]
+  [1m[35m (131.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/lists
+Completed 302 Found in 147ms (ActiveRecord: 134.7ms)
+
+
+Started GET "/lists" for 127.0.0.1 at 2015-09-24 02:56:16 -0700
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.7ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  Rendered lists/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 185ms (Views: 181.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2015-09-24 02:56:22 -0700
+
+ActionController::RoutingError (No route matches [GET] "/pages"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.8ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.7ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (52.8ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.8ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (214.0ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.6ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (79.7ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (161.8ms)
+
+
+Started GET "/lists" for 127.0.0.1 at 2015-09-24 03:07:49 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListsController#index as HTML
+  [1m[35mList Load (0.6ms)[0m  SELECT "lists".* FROM "lists"
+  Rendered lists/index.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 932ms (Views: 870.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-24 03:07:51 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-24 03:07:52 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-09-24 03:07:52 -0700
+
+
+Started GET "/assets/scaffolds.self-6e5bda86a7581ca970be9f9d9156b751c5806ac12e7f053ced9f2fcefad87586.css?body=1" for 127.0.0.1 at 2015-09-24 03:07:52 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-24 03:07:52 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-24 03:07:52 -0700
+
+
+Started GET "/assets/lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-24 03:07:52 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-24 03:07:52 -0700
+
+
+Started GET "/lists/1" for 127.0.0.1 at 2015-09-24 03:07:53 -0700
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mList Load (0.8ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered lists/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 219ms (Views: 176.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/lists" for 127.0.0.1 at 2015-09-24 03:11:29 -0700
+Processing by ListsController#index as HTML
+  [1m[36mList Load (2.0ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  Rendered lists/index.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 304ms (Views: 297.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/lists" for 127.0.0.1 at 2015-09-24 03:12:56 -0700
+Processing by ListsController#index as HTML
+  [1m[35mList Load (0.6ms)[0m  SELECT "lists".* FROM "lists"
+  Rendered lists/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 250ms (Views: 247.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-24 03:12:57 -0700
+
+
+Started GET "/assets/scaffolds.self-6e5bda86a7581ca970be9f9d9156b751c5806ac12e7f053ced9f2fcefad87586.css?body=1" for 127.0.0.1 at 2015-09-24 03:12:57 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-24 03:12:57 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-09-24 03:12:57 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-24 03:12:57 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-24 03:12:57 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-24 03:12:57 -0700
+
+
+Started GET "/assets/lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-24 03:12:57 -0700
+
+
+Started GET "/lists" for 127.0.0.1 at 2015-09-24 03:13:15 -0700
+Processing by ListsController#index as HTML
+  [1m[36mList Load (2.4ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  Rendered lists/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 214ms (Views: 198.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-24 03:13:15 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-24 03:13:15 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-24 03:13:15 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-09-24 03:13:15 -0700
+
+
+Started GET "/assets/scaffolds.self-6e5bda86a7581ca970be9f9d9156b751c5806ac12e7f053ced9f2fcefad87586.css?body=1" for 127.0.0.1 at 2015-09-24 03:13:15 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-24 03:13:15 -0700
+
+
+Started GET "/assets/lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-24 03:13:16 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-24 03:13:16 -0700
+
+
+Started GET "/lists" for 127.0.0.1 at 2015-09-24 03:13:42 -0700
+Processing by ListsController#index as HTML
+  [1m[35mList Load (0.8ms)[0m  SELECT "lists".* FROM "lists"
+  Rendered lists/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 181ms (Views: 177.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/scaffolds.self-6e5bda86a7581ca970be9f9d9156b751c5806ac12e7f053ced9f2fcefad87586.css?body=1" for 127.0.0.1 at 2015-09-24 03:13:43 -0700
+
+
+Started GET "/assets/lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-24 03:13:43 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-24 03:13:43 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-09-24 03:13:43 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-24 03:13:43 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-24 03:13:43 -0700
+
+
+Started GET "/assets/lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-24 03:13:43 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-24 03:13:43 -0700
+
+
+Started GET "/lists" for 127.0.0.1 at 2015-09-24 03:14:15 -0700
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.7ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  Rendered lists/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 183ms (Views: 179.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-24 03:14:15 -0700
+
+
+Started GET "/assets/scaffolds.self-6e5bda86a7581ca970be9f9d9156b751c5806ac12e7f053ced9f2fcefad87586.css?body=1" for 127.0.0.1 at 2015-09-24 03:14:15 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-09-24 03:14:15 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-24 03:14:15 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-24 03:14:15 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-24 03:14:15 -0700
+
+
+Started GET "/assets/lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-24 03:14:15 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-24 03:14:15 -0700
+
+
+Started GET "/lists/new" for 127.0.0.1 at 2015-09-24 03:14:21 -0700
+Processing by ListsController#new as HTML
+  Rendered lists/_form.html.erb (34.8ms)
+  Rendered lists/new.html.erb within layouts/application (55.8ms)
+Completed 200 OK in 206ms (Views: 203.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lists/new" for 127.0.0.1 at 2015-09-24 03:17:55 -0700
+Processing by ListsController#new as HTML
+  Rendered lists/_form.html.erb (49.7ms)
+  Rendered lists/new.html.erb within layouts/application (56.1ms)
+Completed 200 OK in 286ms (Views: 276.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-24 03:17:55 -0700
+
+
+Started GET "/assets/scaffolds.self-6e5bda86a7581ca970be9f9d9156b751c5806ac12e7f053ced9f2fcefad87586.css?body=1" for 127.0.0.1 at 2015-09-24 03:17:55 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-24 03:17:55 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-09-24 03:17:55 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-24 03:17:55 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-24 03:17:55 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-24 03:17:55 -0700
+
+
+Started GET "/assets/lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-24 03:17:55 -0700
+
+
+Started POST "/lists" for 127.0.0.1 at 2015-09-24 03:18:00 -0700
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QCE3foa0rfEz/m5/i0spcdWV7q0RPRxI0UwXP4sP2T+E3H/YsFRiuSGor4bPdpxpIOBOxTz/JvB4Z8mvus0Rcw==", "list"=>{"title"=>"Test list 2"}, "commit"=>"Create List"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/lists_controller.rb:28:in `create'
+
+
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (30.4ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (14.9ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.4ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (112.1ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.5ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.0ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (73.9ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.5ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.6ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (161.2ms)
+
+
+Started POST "/lists" for 127.0.0.1 at 2015-09-24 03:18:55 -0700
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QCE3foa0rfEz/m5/i0spcdWV7q0RPRxI0UwXP4sP2T+E3H/YsFRiuSGor4bPdpxpIOBOxTz/JvB4Z8mvus0Rcw==", "list"=>{"title"=>"Test list 2"}, "commit"=>"Create List"}
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/controllers/lists_controller.rb:73:in `list_params'
+  app/controllers/lists_controller.rb:28:in `create'
+
+
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (28.1ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.6ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.1ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (113.9ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.5ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.0ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (67.9ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.7ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (142.6ms)
+
+
+Started POST "/lists" for 127.0.0.1 at 2015-09-24 03:23:59 -0700
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QCE3foa0rfEz/m5/i0spcdWV7q0RPRxI0UwXP4sP2T+E3H/YsFRiuSGor4bPdpxpIOBOxTz/JvB4Z8mvus0Rcw==", "list"=>{"title"=>"Test list 2"}, "commit"=>"Create List"}
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 3.7ms)
+
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  app/controllers/lists_controller.rb:28:in `create'
+
+
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (34.4ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.5ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.4ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (112.9ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.7ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (71.8ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.9ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (145.8ms)
+
+
+Started POST "/lists" for 127.0.0.1 at 2015-09-24 03:24:28 -0700
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QCE3foa0rfEz/m5/i0spcdWV7q0RPRxI0UwXP4sP2T+E3H/YsFRiuSGor4bPdpxpIOBOxTz/JvB4Z8mvus0Rcw==", "list"=>{"title"=>"Test list 2"}, "commit"=>"Create List"}
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 3.1ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/lists_controller.rb:28:in `create'
+
+
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (28.1ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.9ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.1ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (100.0ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.5ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (67.7ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.9ms)
+  Rendered /home/ichabod/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (135.5ms)
+
+
+Started POST "/lists" for 127.0.0.1 at 2015-09-24 03:25:00 -0700
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QCE3foa0rfEz/m5/i0spcdWV7q0RPRxI0UwXP4sP2T+E3H/YsFRiuSGor4bPdpxpIOBOxTz/JvB4Z8mvus0Rcw==", "list"=>{"title"=>"Test list 2"}, "commit"=>"Create List"}
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "lists" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Test list 2"], ["created_at", "2015-09-24 10:25:00.959255"], ["updated_at", "2015-09-24 10:25:00.959255"]]
+  [1m[35m (110.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/lists/3
+Completed 302 Found in 170ms (ActiveRecord: 116.1ms)
+
+
+Started GET "/lists/3" for 127.0.0.1 at 2015-09-24 03:25:01 -0700
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mList Load (1.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered lists/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 206ms (Views: 191.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-24 03:25:01 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-24 03:25:01 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-09-24 03:25:01 -0700
+
+
+Started GET "/assets/scaffolds.self-6e5bda86a7581ca970be9f9d9156b751c5806ac12e7f053ced9f2fcefad87586.css?body=1" for 127.0.0.1 at 2015-09-24 03:25:01 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-24 03:25:01 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-24 03:25:01 -0700
+
+
+Started GET "/assets/lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-24 03:25:01 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-24 03:25:01 -0700
+
+
+Started GET "/lists" for 127.0.0.1 at 2015-09-24 03:25:04 -0700
+Processing by ListsController#index as HTML
+  [1m[36mList Load (0.7ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  Rendered lists/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 152ms (Views: 148.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/lists" for 127.0.0.1 at 2015-09-24 03:25:51 -0700
+Processing by ListsController#index as HTML
+  [1m[35mList Load (0.9ms)[0m  SELECT "lists".* FROM "lists"
+  Rendered lists/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 209ms (Views: 195.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-24 03:25:51 -0700
+
+
+Started GET "/assets/scaffolds.self-6e5bda86a7581ca970be9f9d9156b751c5806ac12e7f053ced9f2fcefad87586.css?body=1" for 127.0.0.1 at 2015-09-24 03:25:51 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-24 03:25:51 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-09-24 03:25:51 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-24 03:25:52 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-24 03:25:52 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-24 03:25:52 -0700
+
+
+Started GET "/assets/lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-24 03:25:52 -0700
+
+
+Started GET "/lists/1/edit" for 127.0.0.1 at 2015-09-24 03:26:00 -0700
+Processing by ListsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mList Load (0.4ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered lists/_form.html.erb (9.6ms)
+  Rendered lists/edit.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 168ms (Views: 164.1ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/lists/1" for 127.0.0.1 at 2015-09-24 03:26:02 -0700
+Processing by ListsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DX1KERIJUDyS7mxln+vSrPPoZ221kWXzPqagnCuDSJvJgAK3JOmfdIC4rZzb1me0Bp3HBZhTX0uXjX4MGkGA1w==", "list"=>{"title"=>"Test List"}, "commit"=>"Update List", "id"=>"1"}
+  [1m[35mList Load (0.4ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (2.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/lists/1
+Completed 302 Found in 25ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/lists/1" for 127.0.0.1 at 2015-09-24 03:26:03 -0700
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mList Load (0.6ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered lists/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 156ms (Views: 149.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/lists" for 127.0.0.1 at 2015-09-24 03:26:05 -0700
+Processing by ListsController#index as HTML
+  [1m[36mList Load (1.0ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  Rendered lists/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 184ms (Views: 181.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/lists/1" for 127.0.0.1 at 2015-09-24 03:29:27 -0700
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mList Load (0.6ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPage Load (0.7ms)[0m  SELECT "pages".* FROM "pages" WHERE "pages"."list_id" = ?  [["list_id", 1]]
+  [1m[36mImage Load (1.1ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."page_id" = ?  ORDER BY "images"."id" ASC LIMIT 1[0m  [["page_id", 1]]
+  Rendered lists/show.html.erb within layouts/application (81.4ms)
+Completed 200 OK in 312ms (Views: 208.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/lists/1" for 127.0.0.1 at 2015-09-24 03:31:06 -0700
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mList Load (0.4ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE "pages"."list_id" = ?  [["list_id", 1]]
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."page_id" = ?  ORDER BY "images"."id" ASC LIMIT 1[0m  [["page_id", 1]]
+  Rendered lists/show.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 204ms (Views: 183.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-24 03:31:07 -0700
+
+
+Started GET "/assets/scaffolds.self-6e5bda86a7581ca970be9f9d9156b751c5806ac12e7f053ced9f2fcefad87586.css?body=1" for 127.0.0.1 at 2015-09-24 03:31:07 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-09-24 03:31:07 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-24 03:31:07 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-24 03:31:07 -0700
+
+
+Started GET "/assets/lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-24 03:31:07 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-24 03:31:07 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-24 03:31:07 -0700
+
+
+Started GET "/lists/1" for 127.0.0.1 at 2015-09-24 03:31:33 -0700
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mList Load (4.7ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE "pages"."list_id" = ?  [["list_id", 1]]
+  [1m[36mImage Load (0.9ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."page_id" = ?  ORDER BY "images"."id" ASC LIMIT 1[0m  [["page_id", 1]]
+  Rendered lists/show.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 224ms (Views: 196.6ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-24 03:31:34 -0700
+
+
+Started GET "/assets/scaffolds.self-6e5bda86a7581ca970be9f9d9156b751c5806ac12e7f053ced9f2fcefad87586.css?body=1" for 127.0.0.1 at 2015-09-24 03:31:34 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-24 03:31:34 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-24 03:31:34 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-24 03:31:34 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-09-24 03:31:34 -0700
+
+
+Started GET "/assets/lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-24 03:31:34 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-24 03:31:34 -0700
+
+
+Started GET "/lists/1" for 127.0.0.1 at 2015-09-24 03:33:02 -0700
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mList Load (0.5ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE "pages"."list_id" = ?  [["list_id", 1]]
+  [1m[36mImage Load (0.6ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."page_id" = ?[0m  [["page_id", 1]]
+  Rendered lists/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 215ms (Views: 205.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/lists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-09-24 03:33:02 -0700
+
+
+Started GET "/assets/scaffolds.self-6e5bda86a7581ca970be9f9d9156b751c5806ac12e7f053ced9f2fcefad87586.css?body=1" for 127.0.0.1 at 2015-09-24 03:33:02 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-09-24 03:33:02 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-09-24 03:33:02 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-09-24 03:33:02 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-09-24 03:33:02 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-09-24 03:33:02 -0700
+
+
+Started GET "/assets/lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-09-24 03:33:02 -0700
