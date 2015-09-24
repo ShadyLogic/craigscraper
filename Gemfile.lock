@@ -1,0 +1,26 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    marc (1.0.0)
+      scrub_rb (>= 1.0.1, < 2)
+      unf
+    mini_portile (0.6.2)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
+    openurl (1.0.0)
+      marc
+      scrub_rb (~> 1.0)
+    scrub_rb (1.0.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  nokogiri
+  openurl
+
+BUNDLED WITH
+   1.10.6
