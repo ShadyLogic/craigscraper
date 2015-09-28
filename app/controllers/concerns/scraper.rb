@@ -4,32 +4,31 @@ require 'httparty'
 
 module Scraper
 
-	extend ActiveSupport::Concern
+	BASE_URL = "http://sfbay.craigslist.org"
 
-	def initialize(address)
-		@address = address
-		@doc = Nokogiri::HTML(open(@address))
-		@links = create_urls_from_links(gather_links(@doc))
-	end
+	extend ActiveSupport::Concern
 
 	def archive_posts(links)
 		posts = []
 		links.each do |link|
+			p "*"*100
+			p link
+			p "*"*100
 			post = Nokogiri::HTML(open(link))
 			posts << scrape_info(post)
 		end
 		posts
 	end
 
-	def new_links
-		current_doc = Nokogiri::HTML(open(@address))
+	def new_links(address, first_link)
+		current_doc = Nokogiri::HTML(open(address))
 		current_links = create_urls_from_links(gather_links(current_doc))
 
 		new_links = []
 
-		unless current_links.first == @links.first
+		unless current_links.first == first_link
 			current_links.each_index do |i|
-				if current_links[i] == @links.first
+				if current_links[i] == first_link
 					return new_links
 				else
 					new_links << current_links[i]
@@ -40,17 +39,14 @@ module Scraper
 		new_links
 	end
 
-	private
-
-	def gather_links(doc)
-		doc.search('.row > a:first-child').map do |link|
+	def gather_links(address)
+		doc = Nokogiri::HTML(open(address))
+		links = doc.search('.row > a:first-child').map do |link|
 			link.attributes['href'].value
-		end		
+		end
+		links.map { |link| BASE_URL + link }	
 	end
 
-	def create_urls_from_links(links)
-		links.map { |link| "http://sfbay.craigslist.org" + link }	
-	end
 
 	def scrape_info(post)
 		info = {
@@ -59,9 +55,9 @@ module Scraper
 			images: scrape_images(post)
 		}
 
-		unless info[:images].empty?
-			info[:images].map { |url| upload_image(url)}
-		end
+		# unless info[:images].empty?
+		# 	info[:images].map { |url| upload_image(url)}
+		# end
 
 		info
 	end
@@ -93,9 +89,3 @@ module Scraper
 	    return image_url
 	end
 end
-
-response = HTTParty.post('https://api.imgur.com/3/image', :body => { 'image' => 'http://images.craigslist.org/00O0O_aXf7HaEUXbZ_600x450.jpg' }, :headers => { "Authorization" => "Client-ID 8756023387f86f7" }
-
-
-
-

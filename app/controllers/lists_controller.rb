@@ -28,6 +28,25 @@ class ListsController < ApplicationController
   def create
     @list = List.new(list_params)
 
+    links = gather_links(@list.url)
+
+    posts = archive_posts(links)
+
+    posts.each do |post|
+      new_page = Page.create(title: post[:title],
+                              body:  post[:text])
+      post[:images].each do |url|
+        new_page.images << Image.create(url: url)
+      end
+
+      @list.pages << new_page
+
+      new_page.save
+
+    end
+
+
+
     respond_to do |format|
       if @list.save
         format.html { redirect_to @list, notice: 'List was successfully created.' }
@@ -63,6 +82,11 @@ class ListsController < ApplicationController
     end
   end
 
+  def add_new_links
+
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_list
@@ -71,6 +95,6 @@ class ListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_params
-      params.require(:list).permit(:title)
+      params.require(:list).permit(:title, :url)
     end
 end
